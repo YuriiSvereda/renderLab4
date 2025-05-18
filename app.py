@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from db import create_users_table, insert_user, get_all_data
 
 app = Flask(__name__)
