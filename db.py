@@ -21,3 +21,10 @@ def insert_user(name, email):
     with get_connection() as conn:
         with conn.cursor() as cur:
             cur.execute("INSERT INTO users (name, email) VALUES (%s, %s);", (name, email))
+
+
+def get_all_data():
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT name, email FROM users")
+            return cur.fetchall()

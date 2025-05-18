@@ -3,6 +3,11 @@ from db import create_users_table, insert_user
 
 app = Flask(__name__)
 
+@app.route("/", methods=["GET"])
+def index():
+    data = get_all_data()
+    return render_template("index.html", data=data)
+
 @app.route("/create-table", methods=["GET"])
 def create_table_route():
     try:
