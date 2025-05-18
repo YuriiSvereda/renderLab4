@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from db import create_users_table, insert_user
+from db import create_users_table, insert_user, get_all_data
 
 app = Flask(__name__)
 
