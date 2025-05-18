@@ -28,3 +28,8 @@ def get_all_data():
         with conn.cursor() as cur:
             cur.execute("SELECT name, email FROM users")
             return cur.fetchall()
+
+def insert_data(name, email):
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (name, email))
